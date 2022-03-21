@@ -1,0 +1,66 @@
+﻿@model Website2CubieBot.Models.ViewModels.VMLogboekItem
+
+@{
+    ViewBag.Title = "Create";
+    SelectList Personen = new SelectList(Model.Personen, "Id", "Voornaam");
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>LogboekItem</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.LogboekItem.Titel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LogboekItem.Titel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LogboekItem.Titel, "", new { @class = "text-danger" })
+            @Model.LogboekItem
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LogboekItem.Inhoud, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LogboekItem.Inhoud, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LogboekItem.Inhoud, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LogboekItem.Datum, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LogboekItem.Datum, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LogboekItem.Datum, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LogboekItem.Persoon, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.LogboekItem.Persoon.Id, Personen, "--Kies Persoon--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LogboekItem.Persoon.Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

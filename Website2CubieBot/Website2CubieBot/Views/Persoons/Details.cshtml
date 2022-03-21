@@ -1,0 +1,67 @@
+﻿@model Website2CubieBot.Models.ViewModels.VMPersoon
+
+@{
+    ViewBag.Title = "Meer informatie over: " + Model.Persoon.Voornaam;
+}
+
+<h2 class="text-center m-4">Details</h2>
+
+<div class="row">
+    <div class="col text-center p-5">
+        <img src="~/Content/@(Model.Persoon.Voornaam.ToLower()).png" alt="Alternate Text" class="pictround" /><br />
+        <br />
+        <div class="alert alert-info text-break">
+            @Model.Persoon.Voornaam @Model.Persoon.Achternaam
+            <br />
+            17 jaar, Óscar Romerocollege, @Model.Persoon.Gemeente<br />
+            @Model.Persoon.Email
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-1"></div>
+    <div class="col">
+        <div class="overflow-auto">
+            <table class="table table-bordered text-center mb-5">
+                <tr class="text-info">
+                    <th>
+                        Persoon
+                    </th>
+                    <th>
+                        Titel
+                    </th>
+                    <th>
+                        Inhoud
+                    </th>
+                    <th>
+                        Datum
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.Logboek)
+                {
+                    <tr class="text-dark">
+                        <td>
+                            @Html.ActionLink(item.Persoon.Voornaam, "Details", "Persoons", new { id = item.Persoon.Id }, new { @class = "text-bold text-dark" })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titel)
+                        </td>
+                        <td>
+                            @item.Inhoud
+                        </td>
+                        <td>
+                            @item.Datum.ToShortDateString()
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col col-1"></div>
+</div>
+
+
+<p>
+    @Html.ActionLink("Terug naar logboek", "Index", "LogboekItems", null, new { @class = "btn btn-block btn-outline-danger" })
+</p>

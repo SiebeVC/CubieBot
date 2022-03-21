@@ -1,0 +1,49 @@
+﻿@using MeerdereTalenCubieBotWebsite.Models;
+
+@{
+    ViewBag.Title = "Delais";
+    Layout = "~/Views/Shared/_FrancaisLayout.cshtml";
+
+    Deadlines deadlines = ViewBag.DataDeadlines;
+    List<Deadline> LijstElements = deadlines.lijstDeadlines;
+}
+
+<h1 class=" kleurBlauw centerAlign">
+    Delais
+</h1>
+
+<table class="table table-striped" style="border:2px solid rgb(33, 94, 110)">
+    <tr>
+        <th>
+            Quoi?
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+                PDF-document
+            </th>
+    </tr>
+
+    @foreach (var item in LijstElements)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(lijstItem => item.WatFra)
+            </td>
+            <td>
+                @Html.DisplayFor(lijstItem => item.Wanneer)
+            </td>
+            <td>
+                @if (item.Link == "")
+                {
+                    <a href="@Html.ValueFor(lijstItem => item.Link)"></a>
+                }
+                else
+                {
+                    <a href="@Html.ValueFor(lijstItem => item.Link)" target="_blank">Téléchargez</a>
+                }
+            </td>
+        </tr>
+    }
+</table>

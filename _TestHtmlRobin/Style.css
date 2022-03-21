@@ -1,0 +1,103 @@
+﻿@font-face {
+    font-family: "DistantG";
+    src: url("DISTGRG_.ttf");
+}
+
+body {
+    background-color: #c2c2c2;
+    margin: 0;
+    font-family: Verdana;
+}
+
+nav {
+    position: fixed;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    font-family: Verdana;
+    color: white;
+    background-color: #4c90ad;
+    width: 100%;
+    max-height: 70px;
+    margin-bottom: 0px;
+}
+
+nav > ul{
+    display: inline-block;
+    margin-top: 25px;
+    height: 100%;
+    list-style: none;
+
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: -30px;
+    background-color: #4c90ad;
+}
+
+
+.sidenav {
+    width: 6px;
+    height: 52px;
+    float: right;
+    background-color: #a1251f;
+}
+
+.iconnav{
+    width: 120px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.navlink{
+    float: right;
+}
+
+.centertext {
+    padding: 20px;
+    border-radius: 4px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    height: 100%;
+    background-color: white;
+    opacity: 0.9;
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.4);
+}
+
+.banner {
+    width: 100%;
+    background-image: linear-gradient(to right, black, #6b858a, black);
+    margin: auto;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.banner > center >img {
+    width: 500px;
+    -webkit-transition: width 0.7s ease-in-out;
+}
+
+.banner > center> img:hover{
+    width: 510px;
+}
+
+.title{
+    font-family: DistantG;
+    font-size: 30px;
+}
+
+.subtitle {
+    font-family: DistantG;
+    font-size: 20px;
+    color: rgb(33, 94, 110)
+}
+
+.borderbottomnav {
+    background-color: #17373d;
+    height: 1.5px;
+    width: 100%;
+}
+
+.container:hover {
+    color: rgb(33, 100, 110);
+}

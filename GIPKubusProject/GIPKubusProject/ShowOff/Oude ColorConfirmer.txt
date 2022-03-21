@@ -1,0 +1,2954 @@
+﻿
+De oude colorconfirmer
+
+int x = 0;
+int y = 0;
+//Edges
+List<Panel> panelColorEdges = new List<Panel> { FrontMiddleUp, UpMiddleDown, LeftMiddleUp, UpLeftMiddle, BackMiddleUp, UpMiddleUp, RightMiddleUp, UpRightMiddle, FrontMiddleDown, DownMiddleUp, LeftMiddleDown, DownLeftMiddle, BackMiddleDown, DownMiddleDown, RightMiddleDown, DownRightDown };
+List<string> panelColorEdgesString = new List<string> { "FrontMiddleUp", "UpMiddleDown", "LeftMiddleUp", "UpLeftMiddle", "BackMiddleUp", "UpMiddleUp", "RightMiddleUp", "UpRightMiddle", "FrontMiddleDown", "DownMiddleUp", "LeftMiddleDown", "DownLeftMiddle", "BackMiddleDown", "DownMiddleDown", "RightMiddleDown", "DownRightDown" };
+List<Panel> panelNames = new List<Panel> { FrontLeftUp  , FrontMiddleUp  , FrontRightUp  , FrontLeftMiddle  , FrontRightMiddle  , FrontLeftDown  , FrontMiddleDown  , FrontRightDown  , RightLeftUp  , RightMiddleUp  , RightRightUp  , RightLeftMiddle  , RightRightMiddle  , RightLeftDown  , RightMiddleDown  , RightRightDown  , LeftLeftUp  , LeftMiddleUp  , LeftRightUp  , LeftLeftMiddle  , LeftRightMiddle  , LeftLeftDown  , LeftMiddleDown  , LeftRightDown  , BackLeftUp  , BackMiddleUp  , BackRightUp  , BackLeftMiddle  , BackRightMiddle  , BackLeftDown  , BackMiddleDown  , BackRightDown  , UpLeftUp  , UpMiddleUp  , UpRightUp  , UpLeftMiddle  , UpRightMiddle  , UpLeftDown  , UpMiddleDown  , UpRightDown  , DownLeftUp  , DownMiddleUp  , DownRightUp  , DownLeftMiddle  , DownRightMiddle  , DownLeftDown  , DownMiddleDown, DownRightDown  };
+List<Color> colors = new List<Color> { Color.FromArgb(11, 238, 50), Color.FromArgb(33, 96, 112), Color.FromArgb(240, 78, 0), Color.FromArgb(173, 19, 19), Color.Yellow, Color.White };
+
+for (int i = 0; i < 8; i++)
+{
+do
+{
+    if (panelColorEdges[x].BackColor == colors[y] && panelColorEdges[x++].BackColor == Color.White)
+    {
+        //Dan panels zoeken en waarden erin steken
+        if (panelColorEdgesString[x].StartsWith("Front")) {lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "UpMiddleDown"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "FrontMiddleUp"; }
+        else if (panelColorEdgesString[x].StartsWith("Left")) {lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "UpLeftMiddle"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "LeftMiddleUp"; }
+        else if (panelColorEdgesString[x].StartsWith("Right")) {lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "UpRightMiddle"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "RightMiddleUp"; }
+        else if (panelColorEdgesString[x].StartsWith("Back")) {lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "UpMiddleUp"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "BackMiddleUp"; }
+
+    }
+
+    if (panelColorEdges[x].BackColor == colors[y] && panelColorEdges[x++].BackColor == Color.Yellow)
+    {
+        //Dan panels zoeken en waarden erin steken
+        if (panelColorEdges[x].ToString().StartsWith("Front")) { lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "DownMiddleUp"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "FrontMiddleDown"; }
+        else if (panelColorEdges[x].ToString().StartsWith("Left")) { lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "DownLeftMiddle"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "LeftMiddleDown"; }
+        else if (panelColorEdges[x].ToString().StartsWith("Right")) { lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "DownRightMiddle"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "RightMiddleDown"; }
+        else if (panelColorEdges[x].ToString().StartsWith("Back")) { lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x++].ToString()).OorspronkelijkAdres = "DownMiddleDown"; lijstBlokjes.Find(c => c.AdresBlokje == panelColorEdges[x].ToString()).OorspronkelijkAdres = "BackMiddleDown"; }
+
+    }
+
+    if (y == 7)
+    {
+        x++;
+    }
+
+    else
+    {
+        y++;
+    }
+
+} while (y == 8);
+
+
+
+
+#region EdgesConfirmer
+
+//Klaar
+#region Geel en Groen Oorspronkelijkadres geven
+
+//if (DownMiddleDown.BackColor == Color.Yellow && BackMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+//{
+
+//}
+
+//else if (DownMiddleDown.BackColor == Color.Yellow && BackMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+//{
+
+//}
+
+
+//DOWN EN BACK
+if (BackMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && BackMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+else if (BackMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && BackMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && FrontMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+
+
+
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && FrontMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && FrontRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && BackRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && BackLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "DownMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "FrontMiddleDown";
+}
+
+
+
+#endregion
+
+//Klaar
+#region Geel en Rood Oorspronkelijkadres geven
+if (BackMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && BackMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && FrontMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && BackMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && FrontMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && FrontLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && FrontRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && BackRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && BackLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "DownRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "RightMiddleDown";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endregion
+
+//Klaar
+#region Geel en Oranje Oorspronkelijkadres geven
+
+
+
+if (BackMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && BackMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && FrontMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && BackMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && FrontMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && FrontLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && FrontRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && BackRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && BackLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "DownLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "LeftMiddleDown";
+}
+
+#endregion
+
+//Klaar
+#region Geel en Blauw Oorspronkelijkadres geven
+
+
+
+if (BackMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && BackMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && FrontMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && BackMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownMiddleUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && FrontMiddleDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && FrontLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && FrontRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && BackRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightRightMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && BackLeftMiddle.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "DownMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "BackMiddleDown";
+}
+
+#endregion
+
+//Klaar
+#region Wit en Groen Oorspronkelijkadres geven
+if (BackMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && BackMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && FrontMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && BackMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && FrontMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && FrontRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && BackRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && BackLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "UpMiddleDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "FrontMiddleUp";
+}
+
+
+
+#endregion
+
+//Klaar
+#region Wit en Rood Oorspronkelijkadres geven
+if (BackMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && BackMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && FrontMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && BackMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && FrontMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && FrontLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && FrontRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && BackRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && BackLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "UpRightMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "RightMiddleUp";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endregion
+
+//Klaar
+#region Wit en Oranje Oorspronkelijkadres geven
+
+
+
+if (BackMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && BackMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && FrontMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && BackMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && FrontMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && FrontLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && FrontRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && BackRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && BackLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "UpLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "LeftMiddleUp";
+}
+
+#endregion
+
+//Klaar
+#region Wit en Blauw Oorspronkelijkadres geven
+
+
+
+if (BackMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && BackMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && FrontMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && BackMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownMiddleUp.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && FrontMiddleDown.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && FrontLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && FrontRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && BackRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightRightMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && BackLeftMiddle.BackColor == Color.White)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "UpMiddleUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "BackMiddleUp";
+}
+
+#endregion
+
+
+
+
+//Middelste Blokjes
+//Klaar
+#region Rood en Groen Oorspronkelijkadres geven
+
+
+if (BackMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpMiddleUp.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+
+
+else if (UpMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && BackMiddleUp.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightMiddleUp.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftMiddleUp.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && UpMiddleDown.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && FrontMiddleUp.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownMiddleDown.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && BackMiddleDown.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightMiddleDown.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftMiddleDown.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(11, 238, 50) && DownMiddleUp.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(11, 238, 50) && FrontMiddleDown.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftRightMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightLeftMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && FrontRightMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && BackRightMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightRightMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && BackLeftMiddle.BackColor == Color.FromArgb(173, 19, 19))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "RightLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "FrontRightMiddle";
+}
+
+
+
+#endregion
+
+//Klaar
+#region Rood en Blauw Oorspronkelijkadres geven
+if (BackMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpMiddleUp.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "BackLeftMiddle";
+    //
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && BackMiddleUp.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpRightMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightMiddleUp.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpLeftMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftMiddleUp.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && UpMiddleDown.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && FrontMiddleUp.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownMiddleDown.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && BackMiddleDown.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownRightMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightMiddleDown.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownLeftMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftMiddleDown.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(173, 19, 19) && DownMiddleUp.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(173, 19, 19) && FrontMiddleDown.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+
+//FRONT EN LEFT
+else if (FrontLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftRightMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (LeftRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && FrontLeftMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//FRONT EN RIGHT
+else if (FrontRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightLeftMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (RightLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && FrontRightMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+//BACK EN LEFT
+else if (BackRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && LeftLeftMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (LeftLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && BackRightMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+
+//BACK EN RIGHT
+else if (BackLeftMiddle.BackColor == Color.FromArgb(173, 19, 19) && RightRightMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+else if (RightRightMiddle.BackColor == Color.FromArgb(173, 19, 19) && BackLeftMiddle.BackColor == Color.FromArgb(33, 96, 112))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "BackLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "RightRightMiddle";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endregion
+
+//Klaar
+#region Wit en Oranje Oorspronkelijkadres geven
+
+
+//Checkpoint KLijst
+//Oranje 240, 78, 0
+//Groen 11, 238, 50
+
+if (BackMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpMiddleUp.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (UpMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && BackMiddleUp.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+//UP EN RIGHT
+else if (RightMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpRightMiddle.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (UpRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightMiddleUp.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+//UP EN LEFT
+else if (LeftMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (UpLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftMiddleUp.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+//UP EN FRONT
+else if (FrontMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && UpMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (UpMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && FrontMiddleUp.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+
+
+//DOWN EN BACK
+else if (BackMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (DownMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && BackMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+//DOWN EN RIGHT
+else if (RightMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownRightMiddle.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (DownRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+//DOWN EN LEFT
+else if (LeftMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (DownLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+//DOWN EN FRONT
+else if (FrontMiddleDown.BackColor == Color.FromArgb(240, 78, 0) && DownMiddleUp.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+else if (DownMiddleUp.BackColor == Color.FromArgb(240, 78, 0) && FrontMiddleDown.BackColor == Color.FromArgb(11, 238, 50))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "FrontLeftMiddle";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftRightMiddle";
+}
+
+
+
+FRONT EN LEFT
+se if (FrontLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftRightMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+se if (LeftRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && FrontLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+
+
+FRONT EN RIGHT
+se if (FrontRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+se if (RightLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+
+
+BACK EN LEFT
+se if (BackRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && LeftLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+se if (LeftLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && BackRightMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+
+
+
+BACK EN RIGHT
+se if (BackLeftMiddle.BackColor == Color.FromArgb(240, 78, 0) && RightRightMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+se if (RightRightMiddle.BackColor == Color.FromArgb(240, 78, 0) && BackLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "FrontLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "LeftRightMiddle";
+
+
+ndregion
+
+Get Ready
+egion Oranje en Blauw Oorspronkelijkadres geven
+
+ (BackMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpMiddleUp.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (UpMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && BackMiddleUp.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleUp").OorspronkelijkAdres = "LeftLeftMiddle"; ;
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleUp").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+UP EN RIGHT
+se if (RightMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpRightMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (UpRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightMiddleUp.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleUp").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+UP EN LEFT
+se if (LeftMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpLeftMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (UpLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftMiddleUp.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleUp").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+UP EN FRONT
+se if (FrontMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && UpMiddleDown.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (UpMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && FrontMiddleUp.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleUp").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+
+
+DOWN EN BACK
+se if (BackMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownMiddleDown.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (DownMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && BackMiddleDown.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+DOWN EN RIGHT
+se if (RightMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownRightMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (DownRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightMiddleDown.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+DOWN EN LEFT
+se if (LeftMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownLeftMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (DownLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftMiddleDown.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+DOWN EN FRONT
+se if (FrontMiddleDown.BackColor == Color.FromArgb(33, 96, 112) && DownMiddleUp.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (DownMiddleUp.BackColor == Color.FromArgb(33, 96, 112) && FrontMiddleDown.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontMiddleDown").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownMiddleDown").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+
+FRONT EN LEFT
+se if (FrontLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftRightMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (LeftRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && FrontLeftMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+FRONT EN RIGHT
+se if (FrontRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightLeftMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (RightLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && FrontRightMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+BACK EN LEFT
+se if (BackRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && LeftLeftMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (LeftLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && BackRightMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+
+
+BACK EN RIGHT
+se if (BackLeftMiddle.BackColor == Color.FromArgb(33, 96, 112) && RightRightMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+se if (RightRightMiddle.BackColor == Color.FromArgb(33, 96, 112) && BackLeftMiddle.BackColor == Color.FromArgb(240, 78, 0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftMiddle").OorspronkelijkAdres = "LeftLeftMiddle";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightMiddle").OorspronkelijkAdres = "BackRightMiddle";
+
+
+ndregion
+
+
+
+
+ndregion
+
+
+BEZIG
+egion CornersConfirmer
+
+Klaar
+egion Rood, Geel en Groen Oorspronkelijkadres
+
+egion Bovenkant
+Op plaats waar Rood, Wit en Groen als hoekje staat
+ (UpRightDown.BackColor == Color.FromArgb(11, 238, 50) && FrontRightUp.BackColor == Color.Yellow && RightLeftUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (FrontRightUp.BackColor == Color.FromArgb(11, 238, 50) && RightLeftUp.BackColor == Color.Yellow && UpRightDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres  = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (RightLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightDown.BackColor == Color.Yellow && FrontRightUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres  = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+Op plaats waar Rood, Wit en Blauw als hoekje staat
+
+se if (UpRightUp.BackColor == Color.FromArgb(11, 238, 50) && RightRightUp.BackColor == Color.Yellow && BackLeftUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (RightRightUp.BackColor == Color.FromArgb(11, 238, 50) && BackLeftUp.BackColor == Color.Yellow && UpRightUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (BackLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightUp.BackColor == Color.Yellow && RightRightUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+Op plaats waar Oranje, Wit en Groen als hoekje staat
+
+se if (UpLeftDown.BackColor == Color.FromArgb(11, 238, 50) && LeftRightUp.BackColor == Color.Yellow && FrontLeftUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (LeftRightUp.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftUp.BackColor == Color.Yellow && UpLeftDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (FrontLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftDown.BackColor == Color.Yellow && LeftRightUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+Op plaats waar Oranje, Wit en Blauw als hoekje staat
+
+se if (UpLeftUp.BackColor == Color.FromArgb(11, 238, 50) && BackRightUp.BackColor == Color.Yellow && LeftLeftUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (BackRightUp.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftUp.BackColor == Color.Yellow && UpLeftUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (LeftLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftUp.BackColor == Color.Yellow && BackRightUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+ndregion
+
+egion Onderkant
+Op plaats waar Rood, Geel en Groen als hoekje staat
+ (DownRightUp.BackColor == Color.FromArgb(11, 238, 50) && FrontRightDown.BackColor == Color.Yellow && RightLeftDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (FrontRightDown.BackColor == Color.FromArgb(11, 238, 50) && RightLeftDown.BackColor == Color.Yellow && DownRightUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (RightLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightUp.BackColor == Color.Yellow && FrontRightDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+Op plaats waar Rood, Geel en Blauw als hoekje staat
+
+se if (DownRightDown.BackColor == Color.FromArgb(11, 238, 50) && RightRightDown.BackColor == Color.Yellow && BackLeftDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (RightRightDown.BackColor == Color.FromArgb(11, 238, 50) && BackLeftDown.BackColor == Color.Yellow && DownRightDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (BackLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightDown.BackColor == Color.Yellow && RightRightDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+
+
+
+
+
+Op plaats waar Oranje, Geel en Groen als hoekje staat
+
+se if (DownLeftUp.BackColor == Color.FromArgb(11, 238, 50) && LeftRightDown.BackColor == Color.Yellow && FrontLeftDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (LeftRightDown.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftDown.BackColor == Color.Yellow && DownLeftUp.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+se if (FrontLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftUp.BackColor == Color.Yellow && LeftRightDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+
+Op plaats waar Oranje, Geel en Blauw als hoekje staat
+
+se if (DownLeftDown.BackColor == Color.FromArgb(11, 238, 50) && BackRightDown.BackColor == Color.Yellow && LeftLeftDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (BackRightDown.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftDown.BackColor == Color.Yellow && DownLeftDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+se if (LeftLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftDown.BackColor == Color.Yellow && BackRightDown.BackColor == Color.FromArgb(173, 19, 19))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "FrontRightDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "DownRightUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "RightLeftDown";
+
+
+
+
+
+
+ndregion
+
+ndregion
+
+
+
+
+Klaar
+egion Oranje, Geel en Groen Oorspronkelijkadres
+
+egion Bovenkant
+Op plaats waar Rood, Wit en Groen als hoekje staat
+ (UpRightDown.BackColor == Color.FromArgb(11, 238, 50) && FrontRightUp.BackColor == Color.Yellow && RightLeftUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (FrontRightUp.BackColor == Color.FromArgb(11, 238, 50) && RightLeftUp.BackColor == Color.Yellow && UpRightDown.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (RightLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightDown.BackColor == Color.Yellow && FrontRightUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "LeftRightDown";
+
+
+
+
+Op plaats waar Rood, Wit en Blauw als hoekje staat
+
+se if (UpRightUp.BackColor == Color.FromArgb(11, 238, 50) && RightRightUp.BackColor == Color.Yellow && BackLeftUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (RightRightUp.BackColor == Color.FromArgb(11, 238, 50) && BackLeftUp.BackColor == Color.Yellow && UpRightUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (BackLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpRightUp.BackColor == Color.Yellow && RightRightUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+
+
+Op plaats waar Oranje, Wit en Groen als hoekje staat
+
+se if (UpLeftDown.BackColor == Color.FromArgb(11, 238, 50) && LeftRightUp.BackColor == Color.Yellow && FrontLeftUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (LeftRightUp.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftUp.BackColor == Color.Yellow && UpLeftDown.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (FrontLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftDown.BackColor == Color.Yellow && LeftRightUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "LeftRightDown";
+
+
+
+
+Op plaats waar Oranje, Wit en Blauw als hoekje staat
+
+se if (UpLeftUp.BackColor == Color.FromArgb(11, 238, 50) && BackRightUp.BackColor == Color.Yellow && LeftLeftUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (BackRightUp.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftUp.BackColor == Color.Yellow && UpLeftUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+se if (LeftLeftUp.BackColor == Color.FromArgb(11, 238, 50) && UpLeftUp.BackColor == Color.Yellow && BackRightUp.BackColor == Color.FromArgb(240,78,0))
+
+  lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "FrontLeftDown";
+  lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownLeftUp";
+  lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "LeftRightDown";
+
+
+#endregion
+
+#region Onderkant
+//Op plaats waar Rood, Geel en Groen als hoekje staat
+if (DownRightUp.BackColor == Color.FromArgb(11, 238, 50) && FrontRightDown.BackColor == Color.Yellow && RightLeftDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "LeftRightDown";
+}
+
+else if (FrontRightDown.BackColor == Color.FromArgb(11, 238, 50) && RightLeftDown.BackColor == Color.Yellow && DownRightUp.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "RightLeftDown";
+}
+
+else if (RightLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightUp.BackColor == Color.Yellow && FrontRightDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+
+
+//Op plaats waar Rood, Geel en Blauw als hoekje staat
+
+else if (DownRightDown.BackColor == Color.FromArgb(11, 238, 50) && RightRightDown.BackColor == Color.Yellow && BackLeftDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+else if (RightRightDown.BackColor == Color.FromArgb(11, 238, 50) && BackLeftDown.BackColor == Color.Yellow && DownRightDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+else if (BackLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownRightDown.BackColor == Color.Yellow && RightRightDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+
+//Op plaats waar Oranje, Geel en Groen als hoekje staat
+
+else if (DownLeftUp.BackColor == Color.FromArgb(11, 238, 50) && LeftRightDown.BackColor == Color.Yellow && FrontLeftDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+else if (LeftRightDown.BackColor == Color.FromArgb(11, 238, 50) && FrontLeftDown.BackColor == Color.Yellow && DownLeftUp.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "RightLeftDown";
+}
+
+
+
+else if (FrontLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftUp.BackColor == Color.Yellow && LeftRightDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+
+
+
+//Op plaats waar Oranje, Geel en Blauw als hoekje staat
+
+else if (DownLeftDown.BackColor == Color.FromArgb(11, 238, 50) && BackRightDown.BackColor == Color.Yellow && LeftLeftDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+else if (BackRightDown.BackColor == Color.FromArgb(11, 238, 50) && LeftLeftDown.BackColor == Color.Yellow && DownLeftDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+else if (LeftLeftDown.BackColor == Color.FromArgb(11, 238, 50) && DownLeftDown.BackColor == Color.Yellow && BackRightDown.BackColor == Color.FromArgb(240,78,0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "FrontLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "DownLeftUp";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "RightLeftDown";
+}
+
+
+#endregion
+#endregion
+
+
+
+
+
+
+//BEGINNEN MORGEN 31/12/2019
+#region Oranje, Geel en Blauw Oorspronkelijkadres
+
+#region Bovenkant
+
+if (UpRightDown.BackColor == Color.FromArgb(33, 96, 112) && FrontRightUp.BackColor == Color.Yellow && RightLeftUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (FrontRightUp.BackColor == Color.FromArgb(33, 96, 112) && RightLeftUp.BackColor == Color.Yellow && UpRightDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres  = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (RightLeftUp.BackColor == Color.FromArgb(33, 96, 112) && UpRightDown.BackColor == Color.Yellow && FrontRightUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres= "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+
+//Op plaats waar Rood, Wit en Blauw als hoekje staat
+
+else if (UpRightUp.BackColor == Color.FromArgb(33,96,112) && RightRightUp.BackColor == Color.Yellow && BackLeftUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (RightRightUp.BackColor == Color.FromArgb(33,96,112) && BackLeftUp.BackColor == Color.Yellow && UpRightUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (BackLeftUp.BackColor == Color.FromArgb(33,96,112) && UpRightUp.BackColor == Color.Yellow && RightRightUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+
+//Op plaats waar Oranje, Wit en Groen als hoekje staat
+
+else if (UpLeftDown.BackColor == Color.FromArgb(33,96,112) && LeftRightUp.BackColor == Color.Yellow && FrontLeftUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (LeftRightUp.BackColor == Color.FromArgb(33,96,112) && FrontLeftUp.BackColor == Color.Yellow && UpLeftDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (FrontLeftUp.BackColor == Color.FromArgb(33,96,112) && UpLeftDown.BackColor == Color.Yellow && LeftRightUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+
+//Op plaats waar Oranje, Wit en Blauw als hoekje staat
+
+else if (UpLeftUp.BackColor == Color.FromArgb(33,96,112) && BackRightUp.BackColor == Color.Yellow && LeftLeftUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (BackRightUp.BackColor == Color.FromArgb(33,96,112) && LeftLeftUp.BackColor == Color.Yellow && UpLeftUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (LeftLeftUp.BackColor == Color.FromArgb(33,96,112) && UpLeftUp.BackColor == Color.Yellow && BackRightUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+#endregion
+#region Onderkant
+
+//Op plaats waar Rood, Geel en Groen als hoekje staat
+if (DownRightUp.BackColor == Color.FromArgb(33,96,112) && FrontRightDown.BackColor == Color.Yellow && RightLeftDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (FrontRightDown.BackColor == Color.FromArgb(33,96,112) && RightLeftDown.BackColor == Color.Yellow && DownRightUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (RightLeftDown.BackColor == Color.FromArgb(33,96,112) && DownRightUp.BackColor == Color.Yellow && FrontRightDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+
+//Op plaats waar Rood, Geel en Blauw als hoekje staat
+
+else if (DownRightDown.BackColor == Color.FromArgb(33,96,112) && RightRightDown.BackColor == Color.Yellow && BackLeftDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (RightRightDown.BackColor == Color.FromArgb(33,96,112) && BackLeftDown.BackColor == Color.Yellow && DownRightDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (BackLeftDown.BackColor == Color.FromArgb(33,96,112) && DownRightDown.BackColor == Color.Yellow && RightRightDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+//Op plaats waar Oranje, Geel en Groen als hoekje staat
+
+else if (DownLeftUp.BackColor == Color.FromArgb(33,96,112) && LeftRightDown.BackColor == Color.Yellow && FrontLeftDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (LeftRightDown.BackColor == Color.FromArgb(33,96,112) && FrontLeftDown.BackColor == Color.Yellow && DownLeftUp.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+
+else if (FrontLeftDown.BackColor == Color.FromArgb(33,96,112) && DownLeftUp.BackColor == Color.Yellow && LeftRightDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+
+
+
+//Op plaats waar Oranje, Geel en Blauw als hoekje staat
+
+else if (DownLeftDown.BackColor == Color.FromArgb(33,96,112) && BackRightDown.BackColor == Color.Yellow && LeftLeftDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (BackRightDown.BackColor == Color.FromArgb(33,96,112) && LeftLeftDown.BackColor == Color.Yellow && DownLeftDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+else if (LeftLeftDown.BackColor == Color.FromArgb(33,96,112) && DownLeftDown.BackColor == Color.Yellow && BackRightDown.BackColor == Color.FromArgb(240, 78, 0))
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "BackRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "DownLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "LeftLeftDown";
+}
+
+#endregion
+#endregion
+
+
+
+
+
+#region Rood, Geel en Blauw Oorspronkelijkadres
+
+#region bovenkant
+
+if (UpRightDown.BackColor == Color.FromArgb(33, 96, 112) && FrontRightUp.BackColor == Color.FromArgb(173, 19, 19) && RightLeftUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (FrontRightUp.BackColor == Color.FromArgb(33, 96, 112) && RightLeftUp.BackColor == Color.FromArgb(173, 19, 19) && UpRightDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (RightLeftUp.BackColor == Color.FromArgb(33, 96, 112) && UpRightDown.BackColor == Color.FromArgb(173, 19, 19) && FrontRightUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+
+//Op plaats waar Rood, Wit en Blauw als hoekje staat
+
+else if (UpRightUp.BackColor == Color.FromArgb(33, 96, 112) && RightRightUp.BackColor == Color.FromArgb(173, 19, 19) && BackLeftUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (RightRightUp.BackColor == Color.FromArgb(33, 96, 112) && BackLeftUp.BackColor == Color.FromArgb(173, 19, 19) && UpRightUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (BackLeftUp.BackColor == Color.FromArgb(33, 96, 112) && UpRightUp.BackColor == Color.FromArgb(173, 19, 19) && RightRightUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpRightUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+
+//Op plaats waar Oranje, Wit en Groen als hoekje staat
+
+else if (UpLeftDown.BackColor == Color.FromArgb(33, 96, 112) && LeftRightUp.BackColor == Color.FromArgb(173, 19, 19) && FrontLeftUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (LeftRightUp.BackColor == Color.FromArgb(33, 96, 112) && FrontLeftUp.BackColor == Color.FromArgb(173, 19, 19) && UpLeftDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (FrontLeftUp.BackColor == Color.FromArgb(33, 96, 112) && UpLeftDown.BackColor == Color.FromArgb(173, 19, 19) && LeftRightUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+
+//Op plaats waar Oranje, Wit en Blauw als hoekje staat
+
+else if (UpLeftUp.BackColor == Color.FromArgb(33, 96, 112) && BackRightUp.BackColor == Color.FromArgb(173, 19, 19) && LeftLeftUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (BackRightUp.BackColor == Color.FromArgb(33, 96, 112) && LeftLeftUp.BackColor == Color.FromArgb(173, 19, 19) && UpLeftUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (LeftLeftUp.BackColor == Color.FromArgb(33, 96, 112) && UpLeftUp.BackColor == Color.FromArgb(173, 19, 19) && BackRightUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "UpLeftUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+#endregion
+#region Onderkant
+
+//Op plaats waar Rood, Geel en Groen als hoekje staat
+if (DownRightUp.BackColor == Color.FromArgb(33, 96, 112) && RightLeftDown.BackColor == Color.FromArgb(173, 19, 19) && FrontRightDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (FrontRightDown.BackColor == Color.FromArgb(33, 96, 112) && DownRightUp.BackColor == Color.FromArgb(173, 19, 19) && RightLeftDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (RightLeftDown.BackColor == Color.FromArgb(33, 96, 112) && FrontRightDown.BackColor == Color.FromArgb(173, 19, 19) && DownRightUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightLeftDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontRightDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+
+//Op plaats waar Rood, Geel en Blauw als hoekje staat
+
+else if (DownRightDown.BackColor == Color.FromArgb(33, 96, 112) && BackLeftDown.BackColor == Color.FromArgb(173, 19, 19) && RightRightDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (RightRightDown.BackColor == Color.FromArgb(33, 96, 112) && DownRightDown.BackColor == Color.FromArgb(173, 19, 19) && BackLeftDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (BackLeftDown.BackColor == Color.FromArgb(33, 96, 112) && RightRightDown.BackColor == Color.FromArgb(173, 19, 19) && DownRightDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackLeftDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "RightRightDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownRightDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+//Op plaats waar Oranje, Geel en Groen als hoekje staat
+
+else if (DownLeftUp.BackColor == Color.FromArgb(33, 96, 112) && FrontLeftDown.BackColor == Color.FromArgb(173, 19, 19) && LeftRightDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+else if (LeftRightDown.BackColor == Color.FromArgb(33, 96, 112) && DownLeftUp.BackColor == Color.FromArgb(173, 19, 19) && FrontLeftDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+
+else if (FrontLeftDown.BackColor == Color.FromArgb(33, 96, 112) && LeftRightDown.BackColor == Color.FromArgb(173, 19, 19) && DownLeftUp.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "FrontLeftDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftRightDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftUp").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+
+
+//Op plaats waar Oranje, Geel en Blauw als hoekje staat
+
+else if (DownLeftDown.BackColor == Color.FromArgb(33, 96, 112) && LeftLeftDown.BackColor == Color.FromArgb(173, 19, 19) && BackRightDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+else if (BackRightDown.BackColor == Color.FromArgb(33, 96, 112) && DownLeftDown.BackColor == Color.FromArgb(173, 19, 19) && LeftLeftDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "RightRightDown";
+}
+
+
+else if (LeftLeftDown.BackColor == Color.FromArgb(33, 96, 112) && BackRightDown.BackColor == Color.FromArgb(173, 19, 19) && DownLeftDown.BackColor == Color.Yellow)
+{
+    lijstBlokjes.Find(c => c.AdresBlokje == "LeftLeftDown").OorspronkelijkAdres = "BackLeftDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "BackRightDown").OorspronkelijkAdres = "DownRightDown";
+    lijstBlokjes.Find(c => c.AdresBlokje == "DownLeftDown").OorspronkelijkAdres = "RightRightDown";
+}

@@ -1,0 +1,119 @@
+﻿@model List<Taal>
+@using Website2CubieBot.Models
+@{
+    ViewBag.Title = "Home Pagina";
+}
+
+@if (Model.Count > 0)
+{
+
+    foreach (var item in Model)
+    {
+        <div class="text">
+            <div class="row">
+
+                @if (item.Volgorde == 1)
+                {
+                    <div class="col mar-l text-right pr-5 text-dark font-weight-bold">
+                        <h1 style="color:gray">@item.Titel</h1>
+                        <p>
+                            @item.Inhoud
+                        </p>
+                        <div class="pc-hide">
+                            <img src="~/Content/cubiebot.png" class="max" width="100%" />
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-4 mar-r mobile-hide borderl"><img src="~/Content/cubiebot.png" class="max" width="500px" /></div>
+                }
+                else if (item.Volgorde == 69)
+                {
+                    <div class="col mar-l text-right pr-5 text-dark font-weight-bold">
+                        <h1 style="color:gray">@item.Titel</h1>
+                        <p>
+                            @item.Inhoud
+                        </p>
+                        <div class="pc-hide">
+                            <video width="320" height="240" controls>
+                                <source src="~/Content/Demo CubieBot.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-4 mar-r mobile-hide borderl">
+                        <video width="320" height="240" controls>
+                            <source src="~/Content/Video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                }
+
+                else
+                {
+                    <div class="col mar-l text-right pr-5 text-dark font-weight-bold">
+                        <h1 style="color:gray">@item.Titel</h1>
+                        <p>
+                            @item.Inhoud
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+
+
+@*<div class="text">
+        <div class="row">
+            <div class="col mar-l text-right pr-5 text-dark font-weight-bold borderr">
+                <h1 style="color:gray">Welkom</h1>
+                <p>
+                    Welkom op onze website!
+                    We heten u van harte welkom op onze website! Dit is de website van CubieBot, een project gemaakt door twee laatstejaarsstudenten van het Óscar Romerocollege te Dendermonde. De CubieBot is een Robot die automatisch een Rubik’s Cube kan oplossen. De CubieBot is momenteel nog steeds volop in de maak. We houden u op de hoogte! Logo
+                    Het logo legt zichzelf uit als u weet wat de naam betekent. Op de voorgrond ziet u onze naam van ons project en het acroniem RSS dat staat voor ‘Robin, Siebe, Solver’. Op de achtergrond ziet u een Rubik’s Cube de kleuren van onze huisstijl.
+                </p>
+            </div>
+            <div class="col col-sm-4 mar-r"><img src="~/Content/cubiebot.png" class="max" width="500px"></img></div>
+        </div>
+    </div>
+
+    <div class="text">
+
+        <div class="row">
+
+
+            <div class="col mar-l text-left pr-5 text-dark font-weight-bold">
+                <h1>
+                    Waarom dit project?
+                </h1>
+                <p>
+
+                    We hebben dit project gekozen omdat we beide zéér geïnteresseerd zijn in het oplossen van een Rubik’s Cube en we dachten… Dit kan toch automatisch vandaar dat we de uitdaging zijn aangegaan en zijn begonnen.
+                    Een tweede reden voor dit project is voor andere mensen te helpen een Rubik’s Cube op te lossen, want dit wekt bij de meeste mensen toch wat frustratie op. Daarom dat wij er zijn om te helpen!
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="text">
+
+        <div class="row">
+
+
+            <div class="col mar-l text-left pr-5 text-dark font-weight-bold">
+                <h1>
+                    Hoe hebben we het gemaakt?
+                </h1>
+                <p>
+
+                    We zijn nog steeds volop bezig met het maken van de CubieBot. We houden u op de hoogte! Volg ons ook op <a href="https://trello.com/b/v6D6lTMM/cubiebot">Trello</a>.
+
+                </p>
+            </div>
+        </div>
+    </div>*@

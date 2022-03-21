@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNet.Identity
+@using Website2CubieBot.Models
+@{
+    bool deftigeURL = false;
+    string controller, action;
+    if (Request.Url.AbsoluteUri.ToLower().Contains("/home/") || Request.Url.AbsoluteUri.ToLower().Contains("/persoons/"))
+    {
+        deftigeURL = true;
+        controller = Request.Url.AbsoluteUri.Split('/')[3];
+        action = Request.Url.AbsoluteUri.Split('/')[4].Replace("?taal=Frans","").Replace("?taal=Engels", "").Replace("?taal=Nederlands", "");
+    }
+    else
+    {
+        controller = "Home";
+        action = "Index";
+
+    }
+
+}
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right mr-5 ml-3">
+            @if (!Request.Url.AbsoluteUri.Contains("/LogboekItems") && !Request.Url.AbsoluteUri.Contains("/Persoons"))
+            {
+
+            <li>@Html.ActionLink("NL", action, controller, new { taal = TaalKeuze.Nederlands}, htmlAttributes: new { @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+            <li>@Html.ActionLink("FR", action, controller, new { taal = TaalKeuze.Frans}, htmlAttributes: new { @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+            <li>@Html.ActionLink("EN", action, controller, new { taal = TaalKeuze.Engels}, htmlAttributes: new { @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+            }
+            <li>
+                @Html.ActionLink("Hallo " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link pt-3 pb-3 pl-3 pr-3" })
+            </li>
+            <li class="nav-link pt-3 pb-3 pl-3 pr-3"><a href="javascript:document.getElementById('logoutForm').submit()">Afmelden</a></li>
+        </ul>
+    }
+}
+else
+{
+<ul class="nav navbar-nav navbar-right mr-5 ml-3">
+    @if (!Request.Url.AbsoluteUri.Contains("/LogboekItems") && !Request.Url.AbsoluteUri.Contains("/Persoons"))
+    {
+        <li>@Html.ActionLink("NL", action, controller, new { taal = TaalKeuze.Nederlands }, htmlAttributes: new { @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+        <li>@Html.ActionLink("FR", action, controller, new { taal = TaalKeuze.Frans }, htmlAttributes: new { @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+        <li>@Html.ActionLink("EN", action, controller, new { taal = TaalKeuze.Engels }, htmlAttributes: new { @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+        }
+        <li class="">@Html.ActionLink("Registreren ", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+        <li class="mb-2">@Html.ActionLink("Aanmelden", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link pt-3 pb-3 pl-3 pr-3" })</li>
+    </ul>
+}

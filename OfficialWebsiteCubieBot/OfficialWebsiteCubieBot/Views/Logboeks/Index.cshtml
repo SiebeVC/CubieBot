@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OfficialWebsiteCubieBot.Models.Logboek>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Omschrijving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wanneer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hoelang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persoon)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Omschrijving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wanneer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hoelang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persoon)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

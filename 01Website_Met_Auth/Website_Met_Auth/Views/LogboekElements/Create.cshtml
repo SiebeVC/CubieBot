@@ -1,0 +1,83 @@
+﻿@model Website_Met_Auth.Models.LogboekElement
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_NederlandsLayout.cshtml";
+}
+
+    <h1 class=" kleurBlauw centerAlign">
+        Nieuw Logboek Item
+    </h1>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="subtitles">Logboek Item:</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Persoon
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Naam, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Naam, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Wanneer
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Wanneer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Wanneer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Hoelang
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Hoelang, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Hoelang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Wat?
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WatNed, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WatNed, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.WatFra, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WatFra, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WatFra, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WatEng, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WatEng, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WatEng, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Maak" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Terug naar lijst", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

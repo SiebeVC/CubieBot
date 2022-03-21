@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EDE9BC0-84D5-4846-99A2-C023632F14C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GIPKubusProject</RootNamespace>
+    <AssemblyName>GIPKubusProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\vcsie\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8C681AE5E63CE5AB1FA8803CEFDBC9E1FB991A9C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GIPKubusProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Api.CommonProtos, Version=1.7.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.CommonProtos.1.7.0\lib\net45\Google.Api.CommonProtos.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.8.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.8.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="kayChart, Version=0.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\kayChart.dll.0.4.7\lib\net45\kayChart.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="csFiles\Algoritme.cs" />
+    <Compile Include="Connecties\CubieBotConnectie.cs" />
+    <Compile Include="csFiles\Blokje.cs" />
+    <Compile Include="csFiles\Kubus.cs" />
+    <Compile Include="csFiles\Locking.cs" />
+    <Compile Include="Forms\ConnectieInformatie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConnectieInformatie.Designer.cs">
+      <DependentUpon>ConnectieInformatie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connecties\CubiebotDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CubiebotDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Connecties\CubiebotDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CubiebotDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Connecties\DatabaseMethods.cs" />
+    <Compile Include="DBModels\Pattern.cs" />
+    <Compile Include="DBModels\Solve.cs" />
+    <Compile Include="DBModels\User.cs" />
+    <Compile Include="Forms\Errorbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Errorbox.Designer.cs">
+      <DependentUpon>Errorbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Graph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Graph.Designer.cs">
+      <DependentUpon>Graph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="csFiles\Koppel.cs" />
+    <Compile Include="Forms\SavePattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SavePattern.Designer.cs">
+      <DependentUpon>SavePattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Solves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Solves.Designer.cs">
+      <DependentUpon>Solves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Timer.Designer.cs">
+      <DependentUpon>Timer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewObjects\TextboxCus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\NewObjects\CircButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHomePagina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHomePagina.Designer.cs">
+      <DependentUpon>FormHomePagina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GoBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GoBack.Designer.cs">
+      <DependentUpon>GoBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kleuren blokjes\CornerKleur.cs" />
+    <Compile Include="Kleuren blokjes\EdgesKleur.cs" />
+    <Compile Include="Forms\MovesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovesForm.Designer.cs">
+      <DependentUpon>MovesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connecties\PatternsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatternsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\ShowAlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowAlg.Designer.cs">
+      <DependentUpon>ShowAlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="csFiles\Turns.cs" />
+    <EmbeddedResource Include="Forms\ConnectieInformatie.resx">
+      <DependentUpon>ConnectieInformatie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Errorbox.resx">
+      <DependentUpon>Errorbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHomePagina.resx">
+      <DependentUpon>FormHomePagina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GoBack.resx">
+      <DependentUpon>GoBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Graph.resx">
+      <DependentUpon>Graph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovesForm.resx">
+      <DependentUpon>MovesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timer.resx">
+      <DependentUpon>Timer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SavePattern.resx">
+      <DependentUpon>SavePattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowALg.resx">
+      <DependentUpon>ShowAlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Solves.resx">
+      <DependentUpon>Solves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewObjects\TextboxCus.resx">
+      <DependentUpon>TextboxCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\GIPKubusProject.exe.config" />
+    <None Include="Connecties\CubiebotDataSet.xsc">
+      <DependentUpon>CubiebotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connecties\CubiebotDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CubiebotDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connecties\CubiebotDataSet.xss">
+      <DependentUpon>CubiebotDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connecties\CubiebotDataSet1.xsc">
+      <DependentUpon>CubiebotDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Connecties\CubiebotDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CubiebotDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connecties\CubiebotDataSet1.xss">
+      <DependentUpon>CubiebotDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\Fonts\DistantGalaxy.ttf" />
+    <None Include="packages.config" />
+    <None Include="Connecties\PatternsDataSet.xsc">
+      <DependentUpon>PatternsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connecties\PatternsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatternsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connecties\PatternsDataSet.xss">
+      <DependentUpon>PatternsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Cubiebot.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\GIPKubusProject.pdb" />
+    <Content Include="App_Data\Foto\ArrowLeft.png" />
+    <Content Include="App_Data\Foto\Arrowleft2.png" />
+    <Content Include="App_Data\Foto\ArrowRight.png" />
+    <Content Include="App_Data\Foto\B%27.PNG" />
+    <Content Include="App_Data\Foto\B.PNG" />
+    <Content Include="App_Data\Foto\binIcon.png" />
+    <Content Include="App_Data\Foto\binIcon2.png" />
+    <Content Include="App_Data\Foto\cross-out.png" />
+    <Content Include="App_Data\Foto\CubiebotText.png" />
+    <Content Include="App_Data\Foto\D%27.PNG" />
+    <Content Include="App_Data\Foto\D.PNG" />
+    <Content Include="App_Data\Foto\F%27.PNG" />
+    <Content Include="App_Data\Foto\F.PNG" />
+    <Content Include="App_Data\Foto\Grafiek.png" />
+    <Content Include="App_Data\Foto\L%27.PNG" />
+    <Content Include="App_Data\Foto\L.PNG" />
+    <Content Include="App_Data\Foto\load.png" />
+    <Content Include="App_Data\Foto\load2.png" />
+    <Content Include="App_Data\Foto\load3.png" />
+    <Content Include="App_Data\Foto\load4.png" />
+    <Content Include="App_Data\Foto\Log1.ico" />
+    <Content Include="App_Data\Foto\Logo.ico" />
+    <Content Include="App_Data\Foto\Logo.png" />
+    <Content Include="App_Data\Foto\menu.png" />
+    <Content Include="App_Data\Foto\Plus.png" />
+    <Content Include="App_Data\Foto\R%27.PNG" />
+    <Content Include="App_Data\Foto\R.PNG" />
+    <Content Include="App_Data\Foto\refresh.png" />
+    <Content Include="App_Data\Foto\refresh2.png" />
+    <Content Include="App_Data\Foto\U%27.PNG" />
+    <Content Include="App_Data\Foto\U.PNG" />
+    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
+    <Content Include="ShowOff\Oude ColorConfirmer.txt" />
+    <Content Include="ShowOff\Corners Algortime Yellow Cross.txt" />
+    <Content Include="ShowOff\Oude Solver.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

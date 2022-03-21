@@ -1,0 +1,55 @@
+﻿@using MeerdereTalenCubieBotWebsite.Models
+
+@{
+    Layout = "~/Views/Shared/_FrancaisLayout.cshtml";
+
+    LogBoekElementen logboekEle = ViewBag.DataElementen;
+    List<LogboekElement> LijstElements = logboekEle.lijstEle;
+}
+
+<h1 class=" kleurBlauw centerAlign">
+    Logboek
+</h1>
+<p class="centerAlign">Ci-dessous vous trouverez toutes les activités que nous avons réalisées pour assembler le CubieBot.</p>
+<h4 class="subtitles centerAlign" style="margin-top:50px;font-size:25px">Siebe & Robin</h4>
+
+<table class="table table-striped" style="border:2px solid rgb(33, 94, 110)">
+    <tr>
+        <th>
+            Quand?
+        </th>
+        <th>
+            Combien de temps?
+        </th>
+        <th>
+            Quoi?
+        </th>
+        <th>
+            Nom?
+        </th>
+    </tr>
+
+    @foreach (var item in LijstElements)
+    {
+        //if (item.Naam == "Siebe")
+        //{
+        <tr>
+            <td>
+                @Html.DisplayFor(lijstItem => item.Wanneer)
+            </td>
+            <td>
+                @Html.DisplayFor(lijstItem => item.Hoelang)
+            </td>
+            <td>
+                @Html.DisplayFor(lijstItem => item.WatFra)
+            </td>
+            <td>
+                @Html.DisplayFor(lijstItem => item.Naam)
+            </td>
+        </tr>
+        @*}*@
+    }
+</table>
+
+
+

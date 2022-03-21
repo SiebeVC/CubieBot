@@ -1,0 +1,200 @@
+﻿@font-face {
+    font-family: cubfont;
+    src: url(Quicksand-Regular.ttf);
+}
+
+body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-family: cubfont;
+    background-color: white;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-dark {
+    color: black;
+}
+
+h2 {
+    color: grey;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 2px solid gray;
+    padding: 0;
+    transition: box-shadow .3s;
+}
+
+    .navbar:hover {
+        box-shadow: 2px 2px 2px 2px darkgray;
+    }
+
+.nav-link-drop {
+    color: black;
+    height: 100%;
+    padding: 0px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: black;
+    height: 100%;
+    padding: 0px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: white;
+        font-weight: bold;
+    }
+
+
+.nav-item:hover {
+    transition: background-color .3s;
+}
+
+.nav-item:nth-child(even):hover {
+    background-color: rgb(33,96,112);
+    opacity: .75;
+    color: white;
+}
+
+.nav-item:nth-child(odd):hover {
+    background-color: rgb(173,19,19);
+    opacity: .75;
+    color: white;
+}
+
+
+.navbar-toggler {
+    background-color: white;
+}
+
+.test:nth-child(odd) {
+    background-color: blue;
+}
+
+.test:nth-child(even) {
+    background-color: red;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+
+
+@media (max-width: 900px) {
+    .text {
+        border: 3px solid #303e42;
+        border-radius: 10px;
+        margin: 10px;
+        margin-top: 30px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        transition: background-color .3s;
+    }
+    .mobile-hide {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .text {
+        border: 3px solid #303e42;
+        border-radius: 10px;
+        margin: 50px;
+        padding: 50px;
+        background-color: #f5f5f5;
+        transition: background-color .3s;
+    }
+
+        .text:nth-child(odd):hover {
+            border: 3px solid #303e42;
+            border-radius: 10px;
+            margin: 50px;
+            padding: 50px;
+            background-color: rgba(173,19,19, .3);
+        }
+
+
+        .text:nth-child(even):hover {
+            border: 3px solid #303e42;
+            border-radius: 10px;
+            margin: 50px;
+            padding: 50px;
+            background-color: rgba(33,96,112, .3);
+        }
+
+    .pc-hide {
+        display: none;
+    }
+}
+
+.max {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.borderl {
+    border-left: 2px black solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pictround {
+    border-radius: 50%;
+    display: inline-block;
+    width: 50%;
+    border: 2px solid black;
+    opacity: .8;
+    transition: opacity .2s;
+}
+
+    .pictround:hover {
+        opacity: 1;
+    }

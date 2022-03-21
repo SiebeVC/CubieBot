@@ -1,0 +1,74 @@
+﻿@model Website_Met_Auth.Models.LogboekElement
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_NederlandsLayout.cshtml";
+}
+
+    <h1 class=" kleurBlauw centerAlign">
+        Verwijder
+    </h1>
+
+<h4 class="subtitles">Ben je zeker dat je dit wilt verwijderen?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Persoon
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naam)
+        </dd>
+
+        <dt>
+            Wanneer
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wanneer)
+        </dd>
+
+        <dt>
+            Hoelang
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoelang)
+        </dd>
+
+        <dt>
+            Wat
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WatNed)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.WatFra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WatFra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WatEng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WatEng)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Verwijder" class="btn btn-default" /> |
+            @Html.ActionLink("Terug naar lijst", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model Website2CubieBot.Models.Taal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Taal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Keuze)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Keuze)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inhoud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inhoud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volgorde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volgorde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Locatie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Locatie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

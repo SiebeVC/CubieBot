@@ -1,0 +1,58 @@
+﻿@model List<Taal>
+@using Website2CubieBot.Models
+@{
+    ViewBag.Title = "About";
+}
+
+    <br />
+<h2 class="text-center">@Model[0].Titel</h2>
+<p class="text-center">@Model[0].Inhoud</p>
+
+<br />
+<div class="row mobile-hide">
+    <div class="col text-center p-5">
+        <img src="~/Content/siebe.png" alt="Alternate Text" class="pictround" /><br />
+        <br />    
+        <div class="alert alert-info text-break">
+            Siebe Van Campenhout
+            <br />
+            17 @Model[1].Inhoud, Óscar Romerocollege, Merchtem
+            siebe.vancampenhout@student.romerocollege.be
+        </div>
+    </div>
+    <div class="col text-center p-5">
+        <img src="~/Content/robin.png" alt="Alternate Text" class="pictround" /><br />
+        <br />
+        <div class="alert alert-info text-break">
+            Robin Vermeir
+            <br />
+            17 @Model[1].Inhoud, Óscar Romerocollege, Lebbeke
+            robin.vermeir@student.romerocollege.be
+        </div>
+    </div>
+</div>
+
+<div class="pc-hide">
+    <div class="col text-center p-5">
+        <img src="~/Content/siebe.png" alt="Alternate Text" class="pictround" /><br />
+        <br />
+        <div class="alert alert-info text-break">
+            Siebe Van Campenhout
+            <br />
+            17 @Model[1].Inhoud, Óscar Romerocollege, Merchtem
+            siebe.vancampenhout@student.romerocollege.be
+        </div>
+    </div>
+    <div class="col text-center p-5">
+        <img src="~/Content/robin.png" alt="Alternate Text" class="pictround" /><br />
+        <br />
+        <div class="alert alert-info text-break">
+            Robin Vermeir
+            <br />
+            17 @Model[1].Inhoud, Óscar Romerocollege, Lebbeke
+            robin.vermeir@student.romerocollege.be
+        </div>
+    </div>
+</div>
+
+

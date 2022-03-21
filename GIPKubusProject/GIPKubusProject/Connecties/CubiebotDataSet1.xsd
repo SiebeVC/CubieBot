@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CubiebotDataSet1" targetNamespace="http://tempuri.org/CubiebotDataSet1.xsd" xmlns:mstns="http://tempuri.org/CubiebotDataSet1.xsd" xmlns="http://tempuri.org/CubiebotDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CubiebotConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CubiebotConnectionString (Settings)" PropertyReference="ApplicationSettings.GIPKubusProject.Properties.Settings.GlobalReference.Default.CubiebotConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblSolvesTableAdapter" GeneratorDataComponentClassName="tblSolvesTableAdapter" Name="tblSolves" UserDataComponentName="tblSolvesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CubiebotConnectionString (Settings)" DbObjectName="tblSolves" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TM FROM tblSolves</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TM" DataSetColumn="TM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CubiebotDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CubiebotDataSet1" msprop:Generator_UserDSName="CubiebotDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblSolves" msprop:Generator_TableClassName="tblSolvesDataTable" msprop:Generator_TableVarName="tabletblSolves" msprop:Generator_TablePropName="tblSolves" msprop:Generator_RowDeletingName="tblSolvesRowDeleting" msprop:Generator_RowChangingName="tblSolvesRowChanging" msprop:Generator_RowEvHandlerName="tblSolvesRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSolvesRowDeleted" msprop:Generator_UserTableName="tblSolves" msprop:Generator_RowChangedName="tblSolvesRowChanged" msprop:Generator_RowEvArgName="tblSolvesRowChangeEvent" msprop:Generator_RowClassName="tblSolvesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TM" msprop:Generator_ColumnVarNameInTable="columnTM" msprop:Generator_ColumnPropNameInRow="TM" msprop:Generator_ColumnPropNameInTable="TMColumn" msprop:Generator_UserColumnName="TM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

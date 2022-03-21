@@ -1,0 +1,465 @@
+﻿//public static string[] MaakCornerGeelGroenRood(List<Blokje> blokjes)
+        //{
+        //    List<string> outputArray = new List<string>();
+        //    Blokje geel = blokjes.Find(b => b.OorspronkelijkAdres == "DownRightUp");
+
+
+        //    //Standaarden
+        //    if ("UpRightDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R", "U", "U", "R'", "U'", "R", "U", "R'");
+        //    }
+        //    else if ("FrontRightUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "F", "R", "F'");
+        //    }
+        //    else if ("RightLeftUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "F", "R'", "F'", "R");
+        //    }
+
+
+        //    //UP
+        //    //Kan ook gecontrolleerd worden met 1 blokje, dat is minder code
+        //    else if ("UpRightUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U", "R", "R", "U'", "R'");
+        //    }
+        //    else if ("UpLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U", "R'", "U", "R", "R", "U'", "R'");
+        //    }
+        //    else if ("UpLeftUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "R'", "U", "R", "R", "U'", "R'");
+        //    }
+
+
+        //    //FRONT
+
+        //    else if ("FrontLeftUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U'", "R", "U", "R'");
+        //    }
+        //    else if ("FrontRightDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R", "U'", "R'", "U", "R", "U'", "R'");
+        //    }
+        //    else if ("FrontLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U", "L", "U'", "F", "R'", "F'", "R");
+        //    }
+
+
+        //    //RIGHT
+        //    else if ("RightRightUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U", "R", "U'", "R'");
+        //    }
+        //    else if ("RightRightDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "B", "U", "B'", "R", "U", "U", "R'", "U'", "R", "U", "R'");
+        //    }
+        //    else if ("RightLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R", "U", "R'", "U'", "R", "U", "R'");
+        //    }
+
+
+
+        //    //LEFT
+        //    else if ("LeftRightUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R", "U'", "R'");
+        //    }
+        //    else if ("LeftRightDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U'", "L", "U", "R", "U'", "R'");
+        //    }
+
+        //    else if ("LeftLeftUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U", "R", "U'", "R'");
+        //    }
+        //    else if ("LeftLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "B'", "U'", "B", "U'", "U'", "R'", "U", "R", "R", "U'", "R'");
+        //    }
+
+
+
+        //    //Down
+        //    else if ("DownLeftUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U", "L", "R", "U'", "R'");
+        //    }
+        //    else if ("DownLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U", "L'", "U", "U", "R", "U'", "R'");
+        //    }
+
+        //    else if ("DownRightDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U", "R", "U", "U", "R", "U'", "R'");
+        //    }
+
+
+        //    //Back
+        //    else if ("BackLeftUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "F", "R'", "F'", "R");
+        //    }
+        //    else if ("BackRightUp" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "U'", "R", "U", "R'");
+        //    }
+        //    else if ("BackRightDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U", "L'", "U", "R", "U", "U", "R'", "U'", "R", "U", "R'");
+        //    }
+        //    else if ("BackLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U", "R", "U", "F", "R'", "F'", "R");
+        //    }
+
+
+
+        //    string[] arr = outputArray.ToArray();
+        //    return arr;
+        //}
+
+        ////Gecheckt
+        //public static string[] MaakCornerGeelGroenOranje(List<Blokje> blokjes)
+        //{
+        //    List<string> outputArray = new List<string>();
+
+        //    Blokje geel = blokjes.Find(b => b.OorspronkelijkAdres == "DownLeftUp");
+
+
+        //    //Boven Oranje Groen
+        //    if ("UpLeftDown" == geel.AdresBlokje)
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U", "U", "L", "U", "L'", "U'", "L"); // OKI
+        //    }
+        //    else if (geel.AdresBlokje.Equals("FrontLeftUp", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "F'", "L'", "F"); //OKI
+        //    }
+        //    else if (geel.AdresBlokje.Equals("leftrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "F'", "L", "F", "L'"); //OKI
+        //    }
+
+
+        //    //Geel naar boven gericht zonder standaard
+        //    else if (geel.AdresBlokje.Equals("uprightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'", "U'", "L'", "U", "U", "L", "U", "L'", "U'", "L"); //OKI
+        //    }
+        //    else if (geel.AdresBlokje.Equals("upleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'", "L'", "U", "U", "L", "U", "L'", "U'", "L");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("uprightdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "L'", "U", "U", "L", "U", "L'", "U'", "L");
+        //    }
+
+
+        //    //Naar links gericht met kubus draai
+        //    else if (geel.AdresBlokje.Equals("frontrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "F'", "L", "F", "L'"); //OKI
+        //    }
+        //    else if (geel.AdresBlokje.Equals("rightrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U", "F'", "L", "F", "L'"); //OKI
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'", "F'", "L", "F", "L'");
+        //    }
+
+
+        //    //Naar rechts gericht met kubus draai
+        //    else if (geel.AdresBlokje.Equals("rightleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "L", "F'", "L'", "F");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("leftleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'", "L", "F'", "L'", "F");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U", "L", "F'", "L'", "F");
+        //    }
+
+        //    //Vanonder...
+        //    //Vanvoor gericht
+        //    else if (geel.AdresBlokje.Equals("frontleftdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U", "L", "L", "F'", "L'", "F");
+        //    }
+
+
+        //    //Rechts gericht
+        //    else if (geel.AdresBlokje.Equals("rightrightdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "B", "U", "B'", "U", "L'", "U", "U", "L", "U", "L'", "U'", "L"); //Move boven //Oki
+        //    }
+
+
+        //    //achter gericht
+        //    else if (geel.AdresBlokje.Equals("backrightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && downleftdown == Color.FromArgb(11, 238, 50)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U", "L'", "U", "U", "L'", "U", "U", "L", "U", "L'", "U'", "L");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backleftdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && rightrightdown == Color.FromArgb(11, 238, 50)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U", "U", "R", "L'", "U", "U", "L", "U", "L'", "U'", "L");
+        //    }
+
+
+        //    //Links gericht
+        //    else if (geel.AdresBlokje.Equals("leftrightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && downleftup == Color.FromArgb(11, 238, 50)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U'", "L", "U", "F'", "L", "F", "L'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("leftleftdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && backrightdown == Color.FromArgb(11, 238, 50)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "B'", "U'", "B", "L'", "U", "U", "L", "U", "L'", "U'", "L");
+        //    }
+
+
+        //    //beneden gericht
+        //    else if (geel.AdresBlokje.Equals("downleftdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && leftleftdown == Color.FromArgb(11, 238, 50)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U", "L'", "U", "U", "F'", "L", "F", "L'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("downrightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && backleftdown == Color.FromArgb(11, 238, 50)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U", "U", "R", "L", "F'", "L'", "F");
+        //    }
+
+        //    string[] arr = outputArray.ToArray();
+        //    return arr;
+        //}
+
+
+
+
+
+        ////#################### START #####################
+
+
+
+
+
+
+        //public static string[] MaakCornerGeelBlauwRood(List<Blokje> blokjes/*Color frontleftdown, Color downrightdown, Color downleftdown, Color backrightdown, Color backleftdown, Color leftleftdown, Color leftrightdown, Color rightrightdown, Color frontrightdown, Color rightleftdown, Color downrightup, Color frontleftup, Color frontrightup, Color rightleftup, Color rightrightup, Color backleftup, Color backrightup, Color leftleftup, Color leftrightup, Color upleftup, Color upleftdown, Color uprightup, Color uprightdown*/)
+        //{
+        //    List<string> outputArray = new List<string>();
+        //    Blokje geel = blokjes.Find(b => b.OorspronkelijkAdres == "DownRightDown");
+
+
+        //    //CornerKleur geelBlauwRood = new CornerKleur(blokjes.Find(x => x.OorspronkelijkAdres == "joker"), blokjes.Find(x => x.OorspronkelijkAdres == "joker"), blokjes.Find(x => x.OorspronkelijkAdres == "joker"));
+
+        //    ////Geel, Blauw, Rood
+        //    //geelBlauwRood = new CornerKleur(blokjes.Find(x => x.OorspronkelijkAdres == "RightRightDown"), blokjes.Find(x => x.OorspronkelijkAdres == "DownRightDown"), blokjes.Find(x => x.OorspronkelijkAdres == "BackLeftDown"));
+
+
+        //    //Standaarden
+        //    if (geel.AdresBlokje.Equals("rightrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "B'", "R", "B", "R'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("uprightup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && backleftup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U", "R", "U", "U", "B'", "R", "B", "R'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backleftup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && rightrightup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "R", "B'", "R'", "B");
+        //    }
+
+
+
+
+
+
+        //    //UP
+        //    else if (geel.AdresBlokje.Equals("upleftup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && leftleftup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U");
+        //    }
+
+        //    else if (geel.AdresBlokje.Equals("uprightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && rightleftup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U'");
+        //    }
+
+        //    else if (geel.AdresBlokje.Equals("upleftdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && frontleftup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U");
+        //    }
+
+
+        //    //FRONT
+        //    else if (geel.AdresBlokje.Equals("frontleftup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && leftrightup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("frontrightup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && uprightdown == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U'");
+        //    }
+
+
+        //    //RIGHT
+        //    else if (geel.AdresBlokje.Equals("rightrightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && backleftdown == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "B", "U", "B'", "U'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("rightleftup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && frontrightup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U'");
+        //    }
+
+
+
+        //    //LEFT
+        //    else if (geel.AdresBlokje.Equals("leftrightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && frontleftdown == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "U'", "L", "U'");
+        //    }
+
+        //    else if (geel.AdresBlokje.Equals("leftleftup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && backrightup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("leftleftdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && downleftdown == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "B'", "U'", "B", "U", "U");
+        //    }
+
+
+
+        //    //Down
+        //    else if (geel.AdresBlokje.Equals("downleftdown", StringComparison.OrdinalIgnoreCase))/* == Color.Yellow && backrightdown == Color.FromArgb(173, 19, 19))*/
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U", "L'");
+        //    }
+
+
+        //    //Back
+        //    else if (geel.AdresBlokje.Equals("backrightup", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && upleftup == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "U");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backrightdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && leftleftdown == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U", "L'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backleftdown", StringComparison.OrdinalIgnoreCase)/* == Color.Yellow && downrightdown == Color.FromArgb(173, 19, 19)*/)
+        //    {
+        //        outputArray = AddMul(outputArray, "R'", "U'", "R", "U");
+        //    }
+
+
+        //    string[] arr = outputArray.ToArray();
+        //    return arr;
+        //}
+
+        //public static string[] MaakCornerGeelBlauwOranje(List<Blokje> blokjes/*Color frontleftdown, Color downrightdown, Color downleftdown, Color backrightdown, Color backleftdown, Color leftleftdown, Color leftrightdown, Color rightrightdown, Color frontrightdown, Color rightleftdown, Color downrightup, Color frontleftup, Color frontrightup, Color rightleftup, Color rightrightup, Color backleftup, Color backrightup, Color leftleftup, Color leftrightup, Color upleftup, Color upleftdown, Color uprightup, Color uprightdown*/)
+        //{
+        //    List<string> outputArray = new List<string>();
+
+        //    Blokje geel = blokjes.Find(b => b.OorspronkelijkAdres == "DownLeftDown");
+        //    //CornerKleur geelBlauwOranje = new CornerKleur(blokjes.Find(x => x.OorspronkelijkAdres == "joker"), blokjes.Find(x => x.OorspronkelijkAdres == "joker"), blokjes.Find(x => x.OorspronkelijkAdres == "joker"));
+
+        //    ////Geel, Blauw, Oranje
+        //    //geelBlauwOranje = new CornerKleur(blokjes.Find(x => x.OorspronkelijkAdres == "DownLeftDown"), blokjes.Find(x => x.OorspronkelijkAdres == "BackRightDown"), blokjes.Find(x => x.OorspronkelijkAdres == "LeftLeftDown"));
+
+
+
+
+        //    //Standaarden
+        //    if (geel.AdresBlokje.Equals("leftleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "B", "L'", "B'", "L");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("upleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U'", "L'", "U", "U", "B", "L'", "B'");
+        //        AddMul(outputArray, "L");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "L'", "B", "L", "B'");
+        //    }
+
+
+        //    //UP
+        //    else if (geel.AdresBlokje.Equals("uprightdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U");
+        //    }
+
+        //    else if (geel.AdresBlokje.Equals("upleftdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("uprightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'");
+        //    }
+
+
+        //    //FRONT
+        //    else if (geel.AdresBlokje.Equals("frontleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("frontrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U");
+        //    }
+
+
+        //    //RIGHT
+        //    else if (geel.AdresBlokje.Equals("rightrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("rightleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U", "U");
+        //    }
+
+
+
+        //    //LEFT
+        //    else if (geel.AdresBlokje.Equals("leftleftdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U'", "L'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("leftrightup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U");
+        //    }
+
+
+        //    //Back
+        //    else if (geel.AdresBlokje.Equals("backleftup", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "U'");
+        //    }
+        //    else if (geel.AdresBlokje.Equals("backrightdown", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        outputArray = AddMul(outputArray, "L", "U'", "L'");
+        //    }
+
+        //    string[] arr = outputArray.ToArray();
+        //    return arr;
+        //}

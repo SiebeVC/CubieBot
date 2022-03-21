@@ -1,0 +1,43 @@
+﻿@model Website_Met_Auth.Models.Deadline
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_NederlandsLayout.cshtml";
+}
+
+    <h1 class=" kleurBlauw centerAlign">
+        Verwijderen
+    </h1>
+
+<h3>Ben je zeker dat je dit wilt verwijderen?</h3>
+<div>
+    <h4 class="subtitles">Deadline</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Wat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wanneer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wanneer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Verwijder" class="btn btn-default" /> |
+            @Html.ActionLink("Terug naar lijst", "Index")
+        </div>
+    }
+</div>

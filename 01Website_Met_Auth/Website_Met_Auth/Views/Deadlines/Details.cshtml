@@ -1,0 +1,37 @@
+﻿@model Website_Met_Auth.Models.Deadline
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_NederlandsLayout.cshtml";
+}
+
+    <h1 class=" kleurBlauw centerAlign">
+        Details
+    </h1>
+
+<div>
+    <h4 class="subtitles">Deadline</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Wat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wanneer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wanneer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Pas aan", "Edit", new { id = Model.DeadlineId }) |
+    @Html.ActionLink("Terug naar lijst", "Index")
+</p>

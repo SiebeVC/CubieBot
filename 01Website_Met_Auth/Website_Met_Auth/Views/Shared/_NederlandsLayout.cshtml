@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CubieBot</title>
+    <link rel="icon" href="~/Content/Images/Logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/CSS.css" />
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom:1.5px solid rgb(33, 94, 110); z-index: 33;">
+            <a class="navbar-brand" href="@Url.Action("Language", "Home")">
+                <img src="~/Content/Images/Logo.png" style="height:30px; width:auto;" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <div class="navbar-nav">
+
+                        <ul style="display: inline-block;">
+                            <li style="display: inline-block; padding-right: 30px;"><a class="nav-item nav-link">@Html.ActionLink("Home", "Home", "nl")</a></li>
+                            <li style="display: inline-block; padding-right: 30px;"><a class="nav-item nav-link">@Html.ActionLink("Over Ons", "Contact", "nl")</a></li>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin") || User.IsInRole("Jury"))
+                                {
+                                    <li style="display: inline-block; padding-right: 30px;"><a class="nav-item nav-link">@Html.ActionLink("Logboek", "Index", "LogboekElements")</a></li>
+                                    <div style="width:7px"></div>
+                                    <li style="display: inline-block; padding-right: 0px;"><a class="nav-item nav-link">@Html.ActionLink("Deadlines", "Index", "Deadlines")</a></li>
+
+                                }
+                            }
+
+                            <li style="display: inline-block; margin-left: -18px"><a class="nav-item nav-link">@Html.Partial("_LoginPartial")</a></li>
+
+                            
+                        </ul>
+
+
+                        
+                        
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+    @*<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:100%; border-bottom:1.5px solid rgb(33, 94, 110); z-index: 33;">
+
+        <div class="row" style="width: 100%">
+            <div class="col">
+
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div style="" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <div class="navbar-nav">
+                            <a class="navbar-brand" href="@Url.Action("Language", "Home")">
+                                <img src="~/Content/Images/Logo.png" style="height:45px; width:80px;" alt="Logo">
+                            </a>
+                            <div style="padding-top:15px; width: 100%;">
+
+                                <a style="display: inline;" class="nav-item nav-link">@Html.ActionLink("Home", "Home", "en")</a>
+                                <a style="display: inline;" class="nav-item nav-link">@Html.ActionLink("Over Ons", "AboutUs", "en")</a>
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    if (User.IsInRole("Admin") || User.IsInRole("Jury"))
+                                    {
+                                        @Html.ActionLink("Logboek", "Index", "LogboekElements")
+                                        <div style="width:15px"></div>
+                                        @Html.ActionLink("Deadlines", "Index", "Deadlines")
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+
+                <div style="float: right;" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <div class="navbar-nav" style="padding-top:15px; width: 120%;">
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>*@
+
+
+
+
+
+    <div class="banner">
+        <center>
+            <img src="https://dev.azure.com/1819-5ITN2-SIEBE/_apis/GraphProfile/MemberAvatars/73d2e1f1-5d98-457d-b3ea-4840349ec50f?overrideDisplayName=CubieBot&size=2" alt="Banner" />
+
+        </center>
+    </div>
+    <div class="centerDiv vliegen">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <hr />
+        <p class="centerAlign">&copy;@DateTime.Now.Year CubieBot</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

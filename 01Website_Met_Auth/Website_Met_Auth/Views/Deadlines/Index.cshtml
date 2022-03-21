@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Website_Met_Auth.Models.Deadline>
+@using System.Data.Entity;
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NederlandsLayout.cshtml";
+}
+
+<h1 class=" kleurBlauw centerAlign">
+    Deadlines
+</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <p>
+            @Html.ActionLink("Nieuw", "Create")
+        </p>
+    }
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Wat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wanneer)
+        </th>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
+        }
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wanneer)
+            </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.ActionLink("Aanpassen", "Edit", new { id = item.DeadlineId }) |
+                        @Html.ActionLink("Verwijderen", "Delete", new { id = item.DeadlineId })
+                    </td>
+                }
+            }
+        </tr>
+    }
+
+</table>

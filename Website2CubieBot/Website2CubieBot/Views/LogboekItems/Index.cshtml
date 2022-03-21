@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Website2CubieBot.Models.LogboekItem>
+
+@{
+    ViewBag.Title = "Logboek";
+}
+
+<h2 class="mt-4 text-center">Logboek</h2>
+<p class="text-center alert-info p-3">Klik op de naam voor meer info te krijgen over de persoon.</p>
+
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <p>
+            @Html.ActionLink("Nieuw Item Aanmaken", "Create")
+        </p>
+    }
+}
+
+<div class="overflow-auto">
+    <table class="table table-bordered text-center">
+        <tr class="text-info">
+            <th>
+                Persoon
+            </th>
+            <th>
+                Titel
+            </th>
+            <th>
+                Inhoud
+            </th>
+            <th>
+                Datum
+            </th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    <th>
+                        Admin Menu
+                    </th>
+                }
+            }
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="text-dark">
+                <td>
+                    @Html.ActionLink(item.Persoon.Voornaam, "Details", "Persoons", new { id = item.Persoon.Id }, new { @class = "text-bold text-dark" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titel)
+                </td>
+                <td>
+                    @item.Inhoud
+                </td>
+                <td>
+                    @item.Datum.ToShortDateString()
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+</div>

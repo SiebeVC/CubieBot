@@ -1,0 +1,376 @@
+﻿for (int a = 0; a < 19; a++)
+{
+    #region Kruis maken
+
+    if (i == 0)
+    {
+        interval = 500;
+        if (FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightLeftMiddle.BackColor == Color.Yellow || FrontRightMiddle.BackColor == Color.Yellow && RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+        {
+            uitvoeren.ToList().Add("R");
+            uitvoeren.ToList().Add("U'");
+            uitvoeren.ToList().Add("R'");
+            uitvoeren.ToList().Add("U'");
+            uitvoeren.ToList().Add("F'");
+            uitvoeren.ToList().Add("U");
+            uitvoeren.ToList().Add("F");
+
+
+            TinaTurner(uitvoeren.ToArray());
+
+
+        }
+        else
+        {
+            uitvoeren = (Algoritme.MaakKruisGeelGroen(kubus.Blokjes)).ToList();
+
+            TinaTurner(uitvoeren.ToArray());
+        }
+
+    }
+    else if (i == 1)
+    {
+        uitvoeren = (Algoritme.MaakKruisGeelOranje(kubus.Blokjes)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 2)
+    {
+        uitvoeren = (Algoritme.MaakKruisGeelRood(kubus.Blokjes)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 3)
+    {
+        uitvoeren = (Algoritme.MaakKuisGeelBlauw(kubus.Blokjes)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+
+    if (i == 4)
+    {
+        if (FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightLeftMiddle.BackColor == Color.Yellow || FrontRightMiddle.BackColor == Color.Yellow && RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+        {
+            uitvoeren.ToList().Add("R");
+            uitvoeren.ToList().Add("U'");
+            uitvoeren.ToList().Add("R'");
+            uitvoeren.ToList().Add("U'");
+            uitvoeren.ToList().Add("F'");
+            uitvoeren.ToList().Add("U");
+            uitvoeren.ToList().Add("F");
+
+
+
+            TinaTurner(uitvoeren.ToArray());
+        }
+        else
+        {
+            interval = 340;
+            uitvoeren = (Algoritme.MaakKruisGeelGroen(kubus.Blokjes)).ToList();
+
+            TinaTurner(uitvoeren.ToArray());
+        }
+
+
+    }
+
+
+    if (i == 5)
+    {
+        if (FrontRightMiddle.BackColor == Color.FromArgb(11, 238, 50) && RightLeftMiddle.BackColor == Color.Yellow || FrontRightMiddle.BackColor == Color.Yellow && RightLeftMiddle.BackColor == Color.FromArgb(11, 238, 50))
+        {
+            uitvoeren.ToList().Add("R");
+            uitvoeren.ToList().Add("U'");
+            uitvoeren.ToList().Add("R'");
+            uitvoeren.ToList().Add("U'");
+            uitvoeren.ToList().Add("F'");
+            uitvoeren.ToList().Add("U");
+            uitvoeren.ToList().Add("F");
+
+            TinaTurner(uitvoeren.ToArray());
+        }
+        else
+        {
+            interval = 340;
+            uitvoeren = (Algoritme.MaakKruisGeelGroen(kubus.Blokjes)).ToList();
+
+            TinaTurner(uitvoeren.ToArray());
+        }
+
+
+    }
+
+    else if (i == 6)
+    {
+        interval = 340;
+        uitvoeren = (Algoritme.MaakCornerGeelGroenRood(DownLeftUp.BackColor, FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 7)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelGroenRood(DownLeftUp.BackColor, FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 8)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelGroenOranje(DownLeftUp.BackColor, FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 9)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelGroenOranje(DownLeftUp.BackColor, FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+
+
+    else if (i == 10)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelBlauwRood(FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 11)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelBlauwRood(FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+
+
+    }
+
+    else if (i == 12)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelBlauwOranje(FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+        TinaTurner(uitvoeren.ToArray());
+
+    }
+    else if (i == 13)
+    {
+        uitvoeren = (Algoritme.MaakCornerGeelBlauwOranje(FrontLeftDown.BackColor, DownRightDown.BackColor, DownLeftDown.BackColor, BackRightDown.BackColor, BackLeftDown.BackColor, LeftLeftDown.BackColor, LeftRightDown.BackColor, RightRightDown.BackColor, FrontRightDown.BackColor, RightLeftDown.BackColor, DownRightUp.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, UpLeftUp.BackColor, UpLeftDown.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+
+
+        TinaTurner(uitvoeren.ToArray());
+
+        interval = 400;
+
+
+    }
+
+    #endregion
+
+    #region F2L
+    else if (i == 14)
+    {
+
+        interval = 530;
+
+
+        //F2L Blauw en rood
+        while (BackLeftMiddle.BackColor != Color.FromArgb(33, 96, 112) || RightRightMiddle.BackColor != Color.FromArgb(173, 19, 19))
+        {
+
+
+            uitvoeren = (Algoritme.MaakF2LBlauwRood(kubus.Blokjes, FrontRightMiddle.BackColor, RightLeftMiddle.BackColor)).ToList();
+
+            TinaTurner(uitvoeren.ToArray());
+            i--;
+
+            await UseDelay(interval);
+        }
+
+
+        //F2L Groen en oranje
+        while (FrontLeftMiddle.BackColor != Color.FromArgb(11, 238, 50) || LeftRightMiddle.BackColor != Color.FromArgb(240, 78, 0))
+        {
+
+
+            uitvoeren = (Algoritme.MaakF2LGroenOranje(kubus.Blokjes)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(interval);
+        }
+
+        //F2L Groen Rood
+        while (FrontRightMiddle.BackColor != Color.FromArgb(11, 238, 50) || RightLeftMiddle.BackColor != Color.FromArgb(173, 19, 19))
+        {
+
+
+
+            uitvoeren = (Algoritme.MaakF2LGroenRood(kubus.Blokjes)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+            i--;
+            await UseDelay(interval);
+        }
+
+
+        //F2L Blauw Oranje
+        while (BackRightMiddle.BackColor != Color.FromArgb(33, 96, 112) || LeftLeftMiddle.BackColor != Color.FromArgb(240, 78, 0))
+        {
+
+
+            uitvoeren = (Algoritme.MaakF2LBlauwOranje(kubus.Blokjes)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(interval);
+        }
+
+        i++;
+    }
+
+    #endregion
+
+    #region bovenvlak met oll
+
+    //Wit kruis
+    else if (i == 15)
+    {
+        interval = 390;
+        while (UpLeftMiddle.BackColor != Color.White || UpRightMiddle.BackColor != Color.White || UpMiddleUp.BackColor != Color.White || UpMiddleDown.BackColor != Color.White)
+        {
+
+            uitvoeren = (Algoritme.MaakWitKruis(UpLeftUp.BackColor, UpMiddleUp.BackColor, UpRightUp.BackColor, UpLeftMiddle.BackColor, UpRightMiddle.BackColor, UpLeftDown.BackColor, UpMiddleDown.BackColor, UpRightDown.BackColor)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(interval);
+        }
+        i++;
+    }
+
+
+
+    //Wit Vlak
+
+    else if (i == 16)
+    {
+        interval = 500;
+        while (UpLeftUp.BackColor != Color.White || UpLeftDown.BackColor != Color.White || UpLeftMiddle.BackColor != Color.White || UpMiddleUp.BackColor != Color.White || UpMiddleDown.BackColor != Color.White || UpRightUp.BackColor != Color.White || UpRightMiddle.BackColor != Color.White || UpRightDown.BackColor != Color.White)
+        {
+            uitvoeren = (Algoritme.MaakWitVlak(kubus.Blokjes, LeftRightUp.BackColor, UpLeftDown.BackColor, FrontLeftUp.BackColor, FrontRightUp.BackColor, LeftLeftUp.BackColor, RightRightUp.BackColor, RightLeftUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, UpLeftUp.BackColor, UpRightUp.BackColor, UpRightDown.BackColor)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+            i--;
+            await UseDelay(interval);
+        }
+        i++;
+    }
+
+    #endregion
+
+    #region bovenvlak met pll
+
+    else if (i == 17)
+    {
+        interval = 500;
+        while ((FrontLeftUp.BackColor != FrontRightUp.BackColor) || (RightLeftUp.BackColor != RightRightUp.BackColor) || (LeftLeftUp.BackColor != LeftRightUp.BackColor) || (BackLeftUp.BackColor != BackRightUp.BackColor))
+        {
+            uitvoeren = (Algoritme.MaakHoekjesWitVlak(FrontLeftUp.BackColor, FrontRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(interval);
+        }
+
+
+        interval = 0;
+        i++;
+    }
+
+
+    else if (i == 18)
+    {
+        interval = 666;
+        if ((FrontMiddleUp.BackColor != Color.FromArgb(11, 238, 50)) || (LeftMiddleUp.BackColor != Color.FromArgb(240, 78, 0)) || (RightMiddleUp.BackColor != Color.FromArgb(173, 19, 19)) || (BackMiddleUp.BackColor != Color.FromArgb(33, 96, 112)))
+        {
+            uitvoeren = (Algoritme.TheEnd(FrontLeftUp.BackColor, FrontRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, FrontMiddleUp.BackColor, LeftMiddleUp.BackColor, RightMiddleUp.BackColor, BackMiddleUp.BackColor)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(interval);
+        }
+
+        if ((FrontMiddleUp.BackColor != Color.FromArgb(11, 238, 50)) || (LeftMiddleUp.BackColor != Color.FromArgb(240, 78, 0)) || (RightMiddleUp.BackColor != Color.FromArgb(173, 19, 19)) || (BackMiddleUp.BackColor != Color.FromArgb(33, 96, 112)))
+        {
+            uitvoeren = (Algoritme.TheEnd(FrontLeftUp.BackColor, FrontRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, FrontMiddleUp.BackColor, LeftMiddleUp.BackColor, RightMiddleUp.BackColor, BackMiddleUp.BackColor)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(interval);
+        }
+
+        if ((FrontMiddleUp.BackColor != Color.FromArgb(11, 238, 50)) || (LeftMiddleUp.BackColor != Color.FromArgb(240, 78, 0)) || (RightMiddleUp.BackColor != Color.FromArgb(173, 19, 19)) || (BackMiddleUp.BackColor != Color.FromArgb(33, 96, 112)))
+        {
+            uitvoeren = (Algoritme.TheEnd(FrontLeftUp.BackColor, FrontRightUp.BackColor, BackLeftUp.BackColor, BackRightUp.BackColor, LeftLeftUp.BackColor, LeftRightUp.BackColor, RightLeftUp.BackColor, RightRightUp.BackColor, FrontMiddleUp.BackColor, LeftMiddleUp.BackColor, RightMiddleUp.BackColor, BackMiddleUp.BackColor)).ToList();
+            TinaTurner(uitvoeren.ToArray());
+
+            i--;
+            await UseDelay(100);
+        }
+
+        i++;
+
+
+    }
+
+    else if (i == 19)
+    {
+        interval = 100;
+        if ((FrontMiddleUp.BackColor != Color.FromArgb(11, 238, 50)) || (LeftMiddleUp.BackColor != Color.FromArgb(240, 78, 0)) || (RightMiddleUp.BackColor != Color.FromArgb(173, 19, 19)) || (BackMiddleUp.BackColor != Color.FromArgb(33, 96, 112)))
+        {
+            uitvoeren.Clear();
+            uitvoeren.Add("U");
+            TinaTurner(uitvoeren.ToArray());
+            i--;
+
+            await UseDelay(interval);
+        }
+        if ((FrontMiddleUp.BackColor != Color.FromArgb(11, 238, 50)) || (LeftMiddleUp.BackColor != Color.FromArgb(240, 78, 0)) || (RightMiddleUp.BackColor != Color.FromArgb(173, 19, 19)) || (BackMiddleUp.BackColor != Color.FromArgb(33, 96, 112)))
+        {
+            uitvoeren.Clear();
+            uitvoeren.Add("U");
+            TinaTurner(uitvoeren.ToArray());
+
+            foreach (var item in uitvoeren)
+            {
+                strUitvoeringCode.Add(item);
+            }
+            i--;
+
+            await UseDelay(interval);
+        }
+        if ((FrontMiddleUp.BackColor != Color.FromArgb(11, 238, 50)) || (LeftMiddleUp.BackColor != Color.FromArgb(240, 78, 0)) || (RightMiddleUp.BackColor != Color.FromArgb(173, 19, 19)) || (BackMiddleUp.BackColor != Color.FromArgb(33, 96, 112)))
+        {
+            uitvoeren.Clear();
+            uitvoeren.Add("U");
+            TinaTurner(uitvoeren.ToArray());
+
+            foreach (var item in uitvoeren)
+            {
+                strUitvoeringCode.Add(item);
+            }
+            i--;
+
+            await UseDelay(interval);
+        }
+        i++;
+    }
+    #endregion
+
+    await UseDelay(interval);
+}

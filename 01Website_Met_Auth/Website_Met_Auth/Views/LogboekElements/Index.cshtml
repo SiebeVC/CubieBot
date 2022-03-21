@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Website_Met_Auth.Models.LogboekElement>
+
+@{
+    Layout = "~/Views/Shared/_NederlandsLayout.cshtml";
+}
+
+<h1 class=" kleurBlauw centerAlign">
+    Logboek
+</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <p>
+            @Html.ActionLink("Nieuw", "Create")
+        </p>
+    }
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wanneer)
+        </th>
+        <th>
+            Tijd?
+        </th>
+        <th>
+            Wat?
+        </th>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Admin"))
+            {
+                <th>
+
+                </th>
+            }
+        }
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wanneer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoelang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WatNed)
+            </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ElementId }) |
+                        @Html.ActionLink("Verwijder", "Delete", new { id = item.ElementId })
+                    </td>
+                }
+            }
+        </tr>
+    }
+
+</table>

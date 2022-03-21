@@ -1,0 +1,48 @@
+﻿@model Website2CubieBot.Models.LogboekItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LogboekItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inhoud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inhoud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

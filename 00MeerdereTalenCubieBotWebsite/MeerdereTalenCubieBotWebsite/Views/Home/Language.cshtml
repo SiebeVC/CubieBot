@@ -1,0 +1,68 @@
+﻿<style>
+    .lang {
+        max-width: 80%;
+        max-height: 80%;
+        display: inline-block;
+        margin: 10px;
+        margin-top: -100px;
+    }
+</style>
+<center>
+    <table>
+        <tbody>
+            <tr>
+                <a href="@Url.Action("Home", "nl")" style="text-decoration:none;">
+                    <div class="cardoverlay lang"  style="margin-top:30px;">
+                        <div class="Card">
+                            <div class="TopCard">
+                                <img src="~/Content/Images/Nederlands.png" style="height: 100%; width: 100%;" alt="Robin" />
+                            </div>
+                            <div class="BottomCard">
+                                <h1 class="cardTitle">Nederlands</h1>
+                                <p class="cardDate">De website in het Nederlands</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </tr>
+            <tr>
+                <a href="@Url.Action("Home", "en")"  style="text-decoration:none;">
+                    <div class="cardoverlay lang"  style="margin-top:30px;">
+                        <div class="Card">
+                            <div class="TopCard">
+                                <img src="~/Content/Images/EnglishBG.png" alt="Robin" style="height: 100%; width: 100%;" />
+                            </div>
+                            <div class="BottomCard">
+
+                                <h1 class="cardTitle">English</h1>
+                                <p class="cardDate" style="margin-bottom:11px;">The website in English</p>
+
+                                <p id="text" style="color: black"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </tr>
+            <tr>
+                <a href="@Url.Action("Home", "fr")"  style="text-decoration:none;">
+                    <div class="cardoverlay lang"  style="margin-top:30px;">
+                        <div class="Card">
+                            <div class="TopCard">
+                                <img src="~/Content/Images/Frans.png" alt="Robin" style="height: 100%; width: 100%;" />
+                            </div>
+                            <div class="BottomCard">
+
+                                <h1 class="cardTitle">Français</h1>
+                                <p class="cardDate" style="margin-bottom:11px;">Le site en Français</p>
+
+                                <p id="text" style="color: black"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </tr>
+        </tbody>
+    </table>
+</center>

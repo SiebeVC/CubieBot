@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CARDS", "CARDS", "{054F62BF-587D-41AB-9E4F-59A4D8791516}"
+	ProjectSection(SolutionItems) = preProject
+		Card1.css = Card1.css
+		Card1.html = Card1.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Navigation_Bar", "Navigation_Bar", "{A13D6084-EB76-4705-BA9A-779BF81A9A52}"
+	ProjectSection(SolutionItems) = preProject
+		HTMLPage1.html = HTMLPage1.html
+		Navigation_Bar1.css = Navigation_Bar1.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CARD + NAVIGATION", "CARD + NAVIGATION", "{550CE6E5-F991-41A5-B313-0668EDFD62D6}"
+	ProjectSection(SolutionItems) = preProject
+		Over_Ons.css = Over_Ons.css
+		Over_Ons.html = Over_Ons.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AB98FCEA-925F-468D-97D4-927EB88FC48E}"
+	ProjectSection(SolutionItems) = preProject
+		Fonts.css = Fonts.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3963C50-CFFA-4CF9-98D1-64BC8A0ED2C9}
+	EndGlobalSection
+EndGlobal

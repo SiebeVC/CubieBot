@@ -1,0 +1,42 @@
+﻿@model Website2CubieBot.Models.LogboekItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LogboekItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inhoud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inhoud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
